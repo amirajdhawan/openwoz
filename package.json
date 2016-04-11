@@ -1,0 +1,29 @@
+{
+  "name": "openwoz",
+  "version": "0.0.1",
+  "description": "The project involves developing a community-standard open-source framework for a Wizard-of-Oz (WoZ) system. WoZ is a common technique enabling Human-Robot Interaction researchers to explore aspects of interaction not yet backed by autonomous systems.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amirajdhawan/openwoz.git"
+  },
+  "keywords": [
+    "wizard",
+    "of",
+    "oz",
+    "human",
+    "robot",
+    "interaction",
+    "framework",
+    "generic"
+  ],
+  "author": "Guy Hoffman, Amiraj Dhawan, Nikhil Dhawan",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/amirajdhawan/openwoz/issues"
+  },
+  "homepage": "https://github.com/amirajdhawan/openwoz#readme"
+}
