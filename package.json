@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/amirajdhawan/openwoz/issues"
   },
-  "homepage": "https://github.com/amirajdhawan/openwoz#readme"
+  "homepage": "https://github.com/amirajdhawan/openwoz#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
 }
