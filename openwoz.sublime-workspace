@@ -519,38 +519,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "server.js",
-			"settings":
-			{
-				"buffer_size": 600,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "controllers/test.js",
-			"settings":
-			{
-				"buffer_size": 319,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "server_test.js",
-			"settings":
-			{
-				"buffer_size": 284,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "config.js",
-			"settings":
-			{
-				"buffer_size": 273,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -585,15 +553,16 @@
 	"expanded_folders":
 	[
 		"/home/amiraj/Dropbox/Courses/MEng Project/openwoz",
-		"/home/amiraj/Dropbox/Courses/MEng Project/openwoz/assets",
-		"/home/amiraj/Dropbox/Courses/MEng Project/openwoz/controllers",
-		"/home/amiraj/Dropbox/Courses/MEng Project/openwoz/lib",
-		"/home/amiraj/Dropbox/Courses/MEng Project/openwoz/models",
-		"/home/amiraj/Dropbox/Courses/MEng Project/openwoz/test",
-		"/home/amiraj/Dropbox/Courses/MEng Project/openwoz/views"
+		"/home/amiraj/Dropbox/Courses/MEng Project/openwoz/rpi_client"
 	],
 	"file_history":
 	[
+		"/home/amiraj/Dropbox/Courses/MEng Project/openwoz/rpi_client/.gitkeep",
+		"/home/amiraj/Dropbox/Courses/MEng Project/openwoz/config.js",
+		"/home/amiraj/Dropbox/Courses/MEng Project/openwoz/server_test.js",
+		"/home/amiraj/Dropbox/Courses/MEng Project/openwoz/controllers/test.js",
+		"/home/amiraj/Dropbox/Courses/MEng Project/openwoz/server.js",
+		"/home/amiraj/Dropbox/Courses/MEng Project/openwoz/openwoz.sublime-project",
 		"/home/amiraj/Dropbox/Courses/MEng Project/openwoz/README.md",
 		"/home/amiraj/Dropbox/Courses/MEng Project/openwoz/assets/.gitkeep",
 		"/home/amiraj/Dropbox/Courses/MEng Project/openwoz/lib/.gitkeep",
@@ -601,7 +570,6 @@
 		"/home/amiraj/Dropbox/Courses/MEng Project/openwoz/lib/index.js",
 		"/home/amiraj/Dropbox/Courses/MEng Project/openwoz/views/.gitkeep",
 		"/home/amiraj/Dropbox/Courses/MEng Project/openwoz/models/.gitkeep",
-		"/home/amiraj/Dropbox/Courses/MEng Project/openwoz/controllers/test.js",
 		"/home/amiraj/Dropbox/Courses/CS_5300_LSI/lsi_project_1b/Documents/hello/install-my-app.sh",
 		"/home/amiraj/Dropbox/Courses/CS_5300_LSI/lsi_project_1b/Documents/hello/launch.sh",
 		"/home/amiraj/Dropbox/Courses/CS_5300_LSI/lsi_project_1b/Scalable_Session_Mgt/src/servlets/SessionSample.java",
@@ -716,12 +684,7 @@
 		"/home/amiraj/Courses/CS4411/cs4411_project_1/p2/alarmtest1",
 		"/home/amiraj/Courses/CS4411/cs4411_project_1/p2/conn-network1",
 		"/home/amiraj/Courses/CS5220/water/minmod.h",
-		"/home/amiraj/Courses/CS5220/water/meshio.h",
-		"/home/amiraj/Courses/CS4411/cs4411_project_1/p2/test_queue.c",
-		"/home/amiraj/Courses/CS4411/cs4411_project_1/p2/temp.c",
-		"/home/amiraj/Courses/CS4411/cs4411_project_1/p2/sieve.c",
-		"/home/amiraj/Courses/CS4411/cs4411_project_1/p2/buffer.c",
-		"/home/amiraj/Courses/CS4411/cs4411_project_1/p2/network2.c"
+		"/home/amiraj/Courses/CS5220/water/meshio.h"
 	],
 	"find":
 	{
@@ -922,122 +885,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "server.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 600,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								466,
-								466
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "controllers/test.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 319,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								319,
-								319
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "server_test.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 284,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								163,
-								163
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "config.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 273,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								259,
-								259
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				}
 			]
 		}
 	],
