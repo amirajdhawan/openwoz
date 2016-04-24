@@ -9,8 +9,8 @@
 6 silly lifecycle openwoz@0.0.1~prestart: no script for prestart, continuing
 7 info lifecycle openwoz@0.0.1~start: openwoz@0.0.1
 8 verbose lifecycle openwoz@0.0.1~start: unsafe-perm in lifecycle true
-9 verbose lifecycle openwoz@0.0.1~start: PATH: /home/amiraj/Softwares/nodejs/lib/node_modules/npm/bin/node-gyp-bin:/home/amiraj/Dropbox/Courses/MEng Project/openwoz/node_modules/.bin:/home/amiraj/Softwares/nodejs/bin:/home/amiraj/anaconda/bin:/home/amiraj/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/bin:~/Softwares/nodejs/bin/
-10 verbose lifecycle openwoz@0.0.1~start: CWD: /home/amiraj/Dropbox/Courses/MEng Project/openwoz
+9 verbose lifecycle openwoz@0.0.1~start: PATH: /home/amiraj/Softwares/nodejs/lib/node_modules/npm/bin/node-gyp-bin:/home/amiraj/Dropbox/Courses/MEng Project/openwoz/server/node_modules/.bin:/home/amiraj/Softwares/nodejs/bin:/opt/ros/jade/bin:/usr/local/cuda-7.5/bin:/home/amiraj/anaconda/bin:/home/amiraj/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/bin:~/Softwares/nodejs/bin/:/usr/lib/nvidia-352
+10 verbose lifecycle openwoz@0.0.1~start: CWD: /home/amiraj/Dropbox/Courses/MEng Project/openwoz/server
 11 silly lifecycle openwoz@0.0.1~start: Args: [ '-c', 'node server.js' ]
 12 silly lifecycle openwoz@0.0.1~start: Returned: code: 1  signal: null
 13 info lifecycle openwoz@0.0.1~start: Failed to exec start script
@@ -25,7 +25,7 @@
 14 verbose stack     at maybeClose (internal/child_process.js:850:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)
 15 verbose pkgid openwoz@0.0.1
-16 verbose cwd /home/amiraj/Dropbox/Courses/MEng Project/openwoz
+16 verbose cwd /home/amiraj/Dropbox/Courses/MEng Project/openwoz/server
 17 error Linux 3.19.0-58-generic
 18 error argv "/home/amiraj/Softwares/nodejs/bin/node" "/home/amiraj/Softwares/nodejs/bin/npm" "start"
 19 error node v5.10.1
