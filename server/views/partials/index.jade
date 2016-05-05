@@ -1,0 +1,8 @@
+p There are {{Object.keys(profiles).length}} profiles
+div(ng-repeat='profile in profiles')
+  h3 {{profile.name}}
+  a(href='/profiles/viewprofile/{{profile.name}}') More
+  |  - 
+  a(href='/profiles/editprofile/{{profile.name}}') Edit
+  |  - 
+  a(href='/profiles/deleteprofile/{{profile.name}}') Delete
