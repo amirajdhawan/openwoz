@@ -14,12 +14,17 @@ Install Packages
 ## Installation for Ubuntu
 
 * Install nodejs and npm packages
+
 > sudo apt-get install nodejs npm
+
 * Install Redis server
 * Comment out the line "bind 127.0.0.1" and change protected yes to protected no in redis.conf file (/etc/redis/6379.conf)
 * Create symlink for nodejs
+
 > sudo ln -s "$(which nodejs)" /usr/bin/node
+
 * Install npm dependencies. Go to openwoz/server folder and execute
+
 > npm install
 
 ## Usage
