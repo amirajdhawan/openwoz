@@ -59,6 +59,7 @@ block userscripts
     $('#eventForm').submit(function (e) {
         e.preventDefault();
         var newVal = $('#newVal').val();
+        $('#newVal').val("");
         $.ajax({
             url: '#{event_name}/trigger',
             data: JSON.stringify({ "newVal" : newVal }), 
