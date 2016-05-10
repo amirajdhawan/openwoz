@@ -5,12 +5,13 @@ block title
 
 block content
   br
-  h2.text-center Select a Robot
+  h2.text-center Select Robot
+  br
   .row-fluid
     each profile, pname in profiles
       a(href="/robots/"+pname)
-        .col-md-4.col-md-offset-1
+        .col-md-4
           .row-fluid
-            .col-md-12.text-center
+            .col-md-12.text-center(style="border: 1px solid black;padding-bottom:30px;")
               h2 #{profile.profileName}
-              img.img-responsive(src=profile.image,width="200px",height="300px",style="display: block;margin: 0 auto;")
+              img.img-responsive(src=profile.image,style="width:200px;height:300px;display: block;margin: 0 auto;")
