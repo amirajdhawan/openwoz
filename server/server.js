@@ -28,7 +28,7 @@ for(var i = 0; i < fileNames.length; i++){
 	robo_profiles_ds.robot_profiles[filename] = fileContents
 	redisChannels.push(filename);
 }
-var message = robo_profiles_ds.robot_profiles["vyo_robot"].events["event1"];
+var message = robo_profiles_ds.robot_profiles["vyo_robot"].events["movemotor"];
 console.log(message);
 
 publisher  = redis.createClient();
