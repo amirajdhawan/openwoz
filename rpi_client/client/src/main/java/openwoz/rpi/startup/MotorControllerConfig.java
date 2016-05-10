@@ -17,7 +17,7 @@ public class MotorControllerConfig {
 	
 	public static void initMotorConfig(){
 		initSemaphore();
-		motorConfig = new DynamixelPiMotorController(comLock, DynamixelMotorType.MX_64, "motors_config.xml");
+		motorConfig = new DynamixelPiMotorController(comLock, DynamixelMotorType.MX_64, "resources/motors_config.xml");
 		//contr.moveMotor("firstmotor", 1.6F);
 	}
 	private static GpioPinDigitalOutput initSemaphore() {
