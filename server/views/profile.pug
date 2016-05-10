@@ -1,0 +1,40 @@
+extends ./layout.pug
+
+block title
+  title OpenWoZ - Robot Profile
+
+block content
+  br
+  .row-fluid
+    .col-md-12.text-center
+      h1 #{profile.profileName}
+      br
+      br
+  .row-fluid
+    .col-md-4.text-justify(style="border-right:1px solid black")
+      .row-fluid
+        .col-md-12.text-center
+          img.img-responsive(src="../"+profile.image,width="200px",height="300px",style="display: block;margin: 0 auto;")
+          br
+          br
+      p Description: #{profile.purpose}
+      p Plateform: #{profile.platform}
+    
+    .col-md-8
+      .row-fluid
+        .col-md-12
+          h2 Events
+          hr
+          each event, ename in profile.events
+            .row-fluid
+              .col-md-12
+                .row-fluid.equal
+                  .col-md-8
+                    h3 #{event.name} 
+                  .col-md-4(style="vertical-align:center;text-align:right")
+                    a.btn-sm.btn-primary(href=profile.profileKey+"/"+event.name,style="height:35px") Trigger!
+                hr
+                p Device Name: #{event.deviceName}
+                p Initial Value: #{event.value}
+                hr
+                br

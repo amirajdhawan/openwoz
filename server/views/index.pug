@@ -15,13 +15,3 @@ block content
     br
     .text-center
       a.btn-lg.btn-primary(href="/robots") Select a Robot!
-  br
-  h2.text-center Select a Robot
-  .row-fluid
-    each profile in profiles
-      a(href="")
-        .col-md-4.col-md-offset-1
-          .row-fluid
-            .col-md-12.text-center
-              h2 #{profile.profileName}
-              img.img-responsive(src=profile.image,width="200px",height="300px",style="display: block;margin: 0 auto;")

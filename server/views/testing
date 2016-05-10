@@ -1,0 +1,12 @@
+.row-fluid
+              .col-md-12
+                .row-fluid.equal
+                  .col-md-8
+                    h3 #{event.name} 
+                  .col-md-4(style="vertical-align:center;text-align:right")
+                    button.btn-sm.btn-primary(style="height:40px",type="button",onclick="javascript:trigger(this,event.name)") Trigger!
+                hr
+                p Device Name: #{event.deviceName}
+                p Initial Value: #{event.value}
+                hr
+                br

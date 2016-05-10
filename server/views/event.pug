@@ -1,0 +1,77 @@
+extends ./layout.pug
+
+block title
+  title OpenWoZ - Trigger Event
+
+block content
+  br
+  .row-fluid
+    .col-md-12.text-center
+      h1 #{profile.profileName}
+      br
+      br
+  .row-fluid
+    .col-md-4.text-justify(style="border-right:1px solid black")
+      .row-fluid
+        .col-md-12.text-center
+          img.img-responsive(src="../../"+profile.image,width="200px",height="300px",style="display: block;margin: 0 auto;")
+          br
+          br
+      p Description: #{profile.purpose}
+      p Plateform: #{profile.platform}
+    
+    .col-md-8
+      .row-fluid
+        .col-md-12
+          h2 Event - #{event_name}
+          hr
+          .row-fluid(id="msgContainer",style="display: none;")
+            .col-md-12.text-center
+              span.label.label-success(id="msg")
+              br
+              br
+          form(method="POST",id="eventForm")
+            .row-fluid
+              .col-md-4
+                p Device Name: 
+              .col-md-6
+                p #{profile.events[event_name].deviceName}
+            br
+            .row-fluid
+              .col-md-4
+                p Set Value:
+              .col-md-6
+                input.form-control(type="text",placeholder=profile.events[event_name].value,id="newVal",name="newVal")
+                br
+            .row-fluid
+              .col-md-12.text-center
+                button.btn.btn-primary(type="submit") Trigger Event!
+
+block userscripts
+  script.
+    $('#newVal').focus(function(){
+      $('#msgContainer').css({
+        display: "none"
+      });
+    });
+
+    $('#eventForm').submit(function (e) {
+        e.preventDefault();
+        var newVal = $('#newVal').val();
+        $.ajax({
+            url: '#{event_name}/trigger',
+            data: JSON.stringify({ "newVal" : newVal }), 
+            processData: false,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            type: "POST",
+            success: function(data){
+                if(data.msg){
+                  $('#msg').text(data.msg);
+                  $('#msgContainer').css({
+                    display: "block"
+                  });
+                }
+            }
+        });
+    });

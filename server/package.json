@@ -29,6 +29,7 @@
   "dependencies": {
     "acorn-globals": "^2.0.0",
     "angular": "^1.5.5",
+    "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "pug": "^2.0.0-alpha7",
     "redis": "^2.6.0-2",
