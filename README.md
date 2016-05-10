@@ -38,4 +38,10 @@ The server is accessible in localhost:8080
 
 > GET localhost:8080/
 
-> GET localhost:8080/test/
+> GET localhost:8080/robots
+
+> GET localhost:8080/robots/{profile_name}
+
+> GET localhost:8080/robots/{profile_name}/{event_name}
+
+> GET localhost:8080/robots/{profile_name}/{event_name}/trigger
