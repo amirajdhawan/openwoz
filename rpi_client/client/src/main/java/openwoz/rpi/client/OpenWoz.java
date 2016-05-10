@@ -4,9 +4,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import openwoz.rpi.comm.RobotProfileSubscriber;
+import openwoz.rpi.helper.UserConstants;
 import openwoz.rpi.startup.ReadDeviceMapping;
 import openwoz.rpi.startup.ReadRobotProfile;
-import openwoz.rpi.utilities.UserConstants;
 import redis.clients.jedis.Jedis;
 
 /**

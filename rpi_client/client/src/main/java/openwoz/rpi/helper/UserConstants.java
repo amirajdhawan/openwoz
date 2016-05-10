@@ -1,4 +1,4 @@
-package openwoz.rpi.utilities;
+package openwoz.rpi.helper;
 
 public class UserConstants {
 	public static String PROFILE_CHANNEL = "profile1";

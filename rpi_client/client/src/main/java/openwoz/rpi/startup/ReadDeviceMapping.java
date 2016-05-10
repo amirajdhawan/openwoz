@@ -7,7 +7,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import openwoz.rpi.dataobjects.Device;
-import openwoz.rpi.utilities.UserConstants;
+import openwoz.rpi.helper.UserConstants;
 
 public class ReadDeviceMapping {
 	public static HashMap<String, Device> deviceMapping;

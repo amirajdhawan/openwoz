@@ -5,7 +5,7 @@ import java.io.File;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import openwoz.rpi.dataobjects.RobotProfile;
-import openwoz.rpi.utilities.UserConstants;
+import openwoz.rpi.helper.UserConstants;
 
 public class ReadRobotProfile {
 	
