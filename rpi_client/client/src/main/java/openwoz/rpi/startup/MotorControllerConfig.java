@@ -1,6 +1,4 @@
-package openwoz.rpi.client;
-
-import java.net.MalformedURLException;
+package openwoz.rpi.startup;
 
 import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
@@ -12,18 +10,15 @@ import openwoz.devices.motor.dynamixel.DynamixelMotorType;
 import openwoz.devices.motor.dynamixel.conn.rpi.DynamixelPiMotorController;
 
 
-public class MotorRunTest {
+public class MotorControllerConfig {
 	private static GpioController gpioCtrl;
 	private static GpioPinDigitalOutput comLock;
+	public static DynamixelPiMotorController motorConfig;
 	
-	public static void main(String args[]) throws MalformedURLException{
+	public static void initMotorConfig(){
 		initSemaphore();
-		DynamixelPiMotorController contr = new DynamixelPiMotorController(comLock, DynamixelMotorType.MX_64, "motors_config.xml");
-		System.out.println("Reached here1");
-		contr.moveMotor("firstmotor", 1.6F);
-		System.out.println("Reached here");
-		
-		
+		motorConfig = new DynamixelPiMotorController(comLock, DynamixelMotorType.MX_64, "motors_config.xml");
+		//contr.moveMotor("firstmotor", 1.6F);
 	}
 	private static GpioPinDigitalOutput initSemaphore() {
         // create gpio controller

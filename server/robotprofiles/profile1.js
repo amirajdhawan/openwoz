@@ -3,12 +3,11 @@
 	"purpose" : "destroy world",
 	"platform" : "rpi",
 	"events": {
-		"event1" : {
-			"deviceName" : "motor1",
-			"startValue" : 0,
-			"endValue" : 90
-		},
-		"event2" : {}
+		"event1" : {	
+			"name" : "event1",
+			"deviceName" : "firstmotor",
+			"value" : 1.5
+		}
 	},
 	"sequences" : {}
 }

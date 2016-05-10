@@ -5,7 +5,7 @@
             id="1"
             zero="2450"
             minPos="-0.91"
-            maxPos="1.5"
+            maxPos="2"
 	    	flipped="false"
             motorType="mx_64"
             defaultAcc="13"

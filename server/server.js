@@ -27,7 +27,9 @@ for(var i = 0; i < fileNames.length; i++){
 	robo_profiles_ds.robot_profiles[filename] = fileContents
 	redisChannels.push(filename);
 }
-var message = {"event": "Event1", "param" : ["param1", "param2"]};
+var message = robo_profiles_ds.robot_profiles["profile1"].events["event1"];
+console.log(message);
+
 publisher  = redis.createClient();
 publisher.publish(redisChannels[0], JSON.stringify(message));
 

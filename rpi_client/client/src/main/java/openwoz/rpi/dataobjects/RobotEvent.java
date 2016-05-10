@@ -1,26 +1,24 @@
 package openwoz.rpi.dataobjects;
 
 public class RobotEvent {
+	String name;
 	String deviceName;
-	double startValue;
-	double endValue;
+	double value;
 	
 	public RobotEvent(){
 		
 	}
 	
-	public RobotEvent(String device, double start, double end){
-		//this.eventName = event;
+	public RobotEvent(String name, String device, double start){
+		this.name = name;
 		this.deviceName = device;
-		this.startValue = start;
-		this.endValue = end;
+		this.value = start;
 	}
 	
-	public RobotEvent(String device, double end){
+	//public RobotEvent(String device, double end){
 		//this.eventName = event;
-		this.deviceName = device;
-		this.endValue = end;
-	}
+	//	this.deviceName = device;
+	//}
 /*
 	public String getEventName() {
 		return eventName;
@@ -38,19 +36,20 @@ public class RobotEvent {
 		this.deviceName = deviceType;
 	}
 
-	public double getStartValue() {
-		return startValue;
+	public String getName() {
+		return name;
 	}
 
-	public void setStartValue(double startValue) {
-		this.startValue = startValue;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public double getEndValue() {
-		return endValue;
+	public double getValue() {
+		return value;
 	}
 
-	public void setEndValue(double endValue) {
-		this.endValue = endValue;
+	public void setValue(double value) {
+		this.value = value;
 	}
+	
 }

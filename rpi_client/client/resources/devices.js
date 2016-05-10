@@ -1,6 +1,6 @@
 {
-	"motor1" : {
-		"commChannel" : "uart",
+	"firstmotor" : {
+		"commChannel" : "serial",
 		"deviceId" : "10"
 	},
 	"motor2" : {

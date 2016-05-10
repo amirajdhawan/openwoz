@@ -18,7 +18,9 @@ import openwoz.devices.motor.dynamixel.DynamixelMotorType;
  * @author Eric Hochendoner (refactored by Benny)
  */
 public class DynamixelTTLConnection {
-
+	
+	public final static String SERIAL_PORT = "/dev/ttyUSB2";
+	
     public final static int[] BAUD_RATES = {9600, 19200, 38400, 57600, 115200, 200000, 250000, 400000, 500000, 1000000};
     public final static int DEFAULT_BAUD_RATE = 57600; // 34
 
@@ -70,7 +72,7 @@ public class DynamixelTTLConnection {
     public Serial connect(int baudRate) throws SerialPortException, IllegalStateException {
         if (serial.isClosed()) {
             // open the default serial port provided on the GPIO header
-            serial.open("/dev/ttyACM0", baudRate);
+            serial.open(SERIAL_PORT, baudRate);
         }
 
         return serial;

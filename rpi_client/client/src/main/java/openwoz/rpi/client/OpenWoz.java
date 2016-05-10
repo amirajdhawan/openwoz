@@ -3,8 +3,10 @@ package openwoz.rpi.client;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import openwoz.devices.motor.dynamixel.conn.rpi.DynamixelPiMotorController;
 import openwoz.rpi.comm.RobotProfileSubscriber;
 import openwoz.rpi.helper.UserConstants;
+import openwoz.rpi.startup.MotorControllerConfig;
 import openwoz.rpi.startup.ReadDeviceMapping;
 import openwoz.rpi.startup.ReadRobotProfile;
 import redis.clients.jedis.Jedis;
@@ -26,6 +28,9 @@ public class OpenWoz
 			
 			logger.info("Read device configuration");
 			ReadDeviceMapping.readDeviceConf();
+			
+			logger.info("Initialize Motor configuration");
+			MotorControllerConfig.initMotorConfig();
 			
 			logger.info("Jedis setup done");
 			subsTh = new Thread(new Runnable() {
