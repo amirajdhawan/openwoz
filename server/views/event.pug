@@ -25,9 +25,9 @@ block content
         .col-md-12
           h2 Event - #{event_name}
           hr
-          .row-fluid(id="msgContainer",style="display: none;")
-            .col-md-12.text-center
-              span.label.label-success(id="msg")
+          .row-fluid
+            .col-md-12.text-center(style="height:35px;")
+              span.label.label-success(id="msg",style="display: none;")
               br
               br
           form(method="POST",id="eventForm")
@@ -41,7 +41,7 @@ block content
               .col-md-4
                 p Set Value:
               .col-md-6
-                input.form-control(type="text",placeholder=profile.events[event_name].value,id="newVal",name="newVal")
+                input.form-control(type="text",autocomplete="off",placeholder=profile.events[event_name].value,id="newVal",name="newVal")
                 br
             .row-fluid
               .col-md-12.text-center
@@ -50,7 +50,8 @@ block content
 block userscripts
   script.
     $('#newVal').focus(function(){
-      $('#msgContainer').css({
+      $('#newVal').val("");
+      $('#msg').css({
         display: "none"
       });
     });
@@ -68,8 +69,8 @@ block userscripts
             success: function(data){
                 if(data.msg){
                   $('#msg').text(data.msg);
-                  $('#msgContainer').css({
-                    display: "block"
+                  $('#msg').css({
+                    display: "inline"
                   });
                 }
             }
