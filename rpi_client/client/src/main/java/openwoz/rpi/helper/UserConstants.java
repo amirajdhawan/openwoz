@@ -2,7 +2,7 @@ package openwoz.rpi.helper;
 
 public class UserConstants {
 	public static String PROFILE_CHANNEL = "profile1";
-	public static String REDIS_SERVER = "localhost";
+	public static String REDIS_SERVER = "54.149.230.9";
 	public static int REDIS_PORT = 6379;
 	
 	public static String PROFILE_LOCATION = "resources/profile.js";
