@@ -1,0 +1,27 @@
+extends ./layout.pug
+
+block title
+  title OpenWoZ
+
+block content
+  br
+  .jumbotron
+    h2 OpenWoZ
+    p
+      | The project involves developing a community-standard open-source framework for a Wizard-of-Oz (WoZ) system. WoZ is a common technique enabling Human-Robot Interaction researchers to explore aspects of interaction not yet backed by autonomous systems.
+      br
+      br 
+      | The system will include a web application running on an embedded platform which controls a robotics system. It also includes a platform-agnostic client framework that gets updated from a user-accessible database. The system needs to be generic enough to ensure that new robot behavior can be added easily and during run-time.
+    br
+    .text-center
+      a.btn-lg.btn-primary(href="/robots") Select a Robot!
+  br
+  h2.text-center Select a Robot
+  .row-fluid
+    each profile in profiles
+      a(href="")
+        .col-md-4.col-md-offset-1
+          .row-fluid
+            .col-md-12.text-center
+              h2 #{profile.profileName}
+              img.img-responsive(src=profile.image,width="200px",height="300px",style="display: block;margin: 0 auto;")
