@@ -16,7 +16,7 @@ public class HeadNodEvent {
 		logger.info(loggingPrefix + "Got call for nodHead method!");
 		try{
 			int i = 0;
-			while(i < 10){
+			while(i < 5){
 				System.out.println(loggingPrefix + "nodHead moving motors " + i + " times!");
 				MotorControllerConfig.motorConfig.moveMotor("headmotor", 0.1F);
 				MotorControllerConfig.motorConfig.moveMotor("neckmotor", 1.0F);
