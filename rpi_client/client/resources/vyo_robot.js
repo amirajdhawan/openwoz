@@ -7,7 +7,7 @@
 	"events": {
 		"headnod" : {	
 			"name" : "headnod",
-			"className": "openwoz.rpi.vyo.events.HeadNodEvent",
+			"className": "vyo.events.HeadNodEvent",
 			"methodName": "nodHead"
 		},
 		"anotherevent" : {
