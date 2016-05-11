@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Motors>
+    <Motor
+            name="headmotor"
+            id="1"
+            zero="2450"
+            minPos="-0.91"
+            maxPos="2"
+	    	flipped="false"
+            motorType="mx_64"
+            defaultAcc="13"
+            defaultVel="16"
+            maxVel="16.0">
+    </Motor>
+    <Motor
+            name="neckmotor"
+            id="2"
+            zero="2450"
+            minPos="-0.91"
+            maxPos="2"
+	    	flipped="false"
+            motorType="mx_64"
+            defaultAcc="13"
+            defaultVel="16"
+            maxVel="16.0">
+    </Motor>
+</Motors>

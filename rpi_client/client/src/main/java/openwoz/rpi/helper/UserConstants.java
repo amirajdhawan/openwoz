@@ -1,5 +1,4 @@
 package openwoz.rpi.helper;
-
 /**
  * Class which defines static user definec constants.
  * This file might be modified to automatically on application startup read these values from a
@@ -13,7 +12,7 @@ public class UserConstants {
 	public static String PROFILE_CHANNEL = "vyo_robot";
 	
 	//IP address of the redis server
-	public static String REDIS_SERVER = "54.149.230.9";
+	public static String REDIS_SERVER = "54.191.36.165";
 	
 	//Port number of the redis server
 	public static int REDIS_PORT = 6379;
