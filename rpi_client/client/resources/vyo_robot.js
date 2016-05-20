@@ -7,13 +7,13 @@
 	"events": {
 		"headnod" : {	
 			"name" : "headnod",
-			"className": "openwoz.rpi.vyo.events.HeadNodEvent",
+			"className": "vyo.events.HeadNodEvent",
 			"methodName": "nodHead"
 		},
-		"anotherevent" : {
-			"name" : "anotherevent",
-			"className" : "",
-			"methodName" : ""
+		"glowled" : {
+			"name" : "glowled",
+			"className" : "vyo.events.BlinkLedEvent",
+			"methodName" : "blinkLed"
 		}
 	},
 	"sequences" : {}

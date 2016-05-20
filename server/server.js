@@ -63,8 +63,8 @@ app.get('/robots/:profile_name/:event_name', function(req, res){
 	console.log("Sending redis channel: " + redisChannels[profile] + " message:" + JSON.stringify(message));
 	publisher.publish(redisChannels[profile], JSON.stringify(message));
 	
-	res.render("profile", {profile: robo_profiles_ds.robot_profiles[profile], msg: "Event successfully triggered!"});
-	//res.json({msg:"Event successfully triggered!"});
+	//res.render("profile", {profile: robo_profiles_ds.robot_profiles[profile], msg: "Event successfully triggered!"});
+	res.json({msg:"Event successfully triggered!"});
 	//res.render("event", {msg: "Message successfully passed!", profile: robo_profiles_ds.robot_profiles[profile], 
 	//	event_name: req.params.event_name});
 });

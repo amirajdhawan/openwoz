@@ -25,12 +25,11 @@ block content
         .col-md-12
           h2 Events
           hr
-          if msg
-            .row-fluid
-              .col-md-12.text-center(style="height:35px;")
-                span.label.label-success(id="msg") #{msg}
-                br
-                br
+          .row-fluid
+            .col-md-12.text-center(style="height:35px;")
+              span.label.label-success(id="msg",style="display:none")
+              br
+              br
           each event, ename in profile.events
             .row-fluid
               .col-md-12
@@ -38,9 +37,44 @@ block content
                   .col-md-8
                     h3 #{event.name} 
                   .col-md-4(style="vertical-align:center;text-align:right")
-                    a.btn-sm.btn-primary(href=profile.profileKey+"/"+event.name,style="height:35px") Trigger!
+                    a.btn-sm.btn-primary.triggerEvent(id=event.name,href="javascript:;",style="height:35px") Trigger!
                 hr
-                //p Device Name: #{event.deviceName}
-                //p Initial Value: #{event.value}
                 hr
                 br
+block userscripts
+  script.
+    function overlay(){
+      var over = '<div id="overlay" style="width:100%;height:100%;">' +
+            '<img id="loading" src="../../imgs/openwoz.gif">' +
+            '</div>';
+      $(over).appendTo('body');
+    }
+
+    $('.triggerEvent').click(function () {
+        overlay();
+        var eventname = $(this).attr("id");
+        $('#msg').css({
+          display: "none"
+        });
+        $.ajax({
+            url: "#{profile.profileKey}/"+eventname,
+            type: "GET",
+            success: function(data){
+                if(data.msg){
+                  $('#msg').text(data.msg);
+                  $('#msg').css({
+                    display: "inline"
+                  });
+                }
+                setTimeout(function(){
+                  $('#overlay').remove();
+                }, 1000);
+                setTimeout(function(){
+                $('#msg').text("");
+                  $('#msg').css({
+                    display: "none"
+                  });
+                }, 4000);
+            }
+        });
+    });
