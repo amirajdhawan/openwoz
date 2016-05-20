@@ -11,7 +11,7 @@ public class BlinkLedEvent {
 		final GpioController gpio = GpioFactory.getInstance();
 	        
         // provision gpio pin #01 & #03 as an output pins and blink
-        final GpioPinDigitalOutput led1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, PinState.LOW);
+        final GpioPinDigitalOutput led1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_02, PinState.LOW);
 
         // create and register gpio pin listener
         int i = 0;

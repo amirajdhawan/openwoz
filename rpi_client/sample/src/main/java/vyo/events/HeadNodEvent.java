@@ -11,7 +11,7 @@ public class HeadNodEvent {
 	private static Logger logger = LoggerFactory.getLogger(RobotProfileSubscriber.class);
 	private static String loggingPrefix = "";
 	
-	public void nodHead(){
+	public void nodHead(Integer a){
 		
 		logger.info(loggingPrefix + "Got call for nodHead method!");
 		try{

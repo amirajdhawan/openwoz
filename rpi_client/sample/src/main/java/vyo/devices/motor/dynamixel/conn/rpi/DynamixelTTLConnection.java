@@ -19,7 +19,7 @@ import vyo.devices.motor.dynamixel.DynamixelMotorType;
  */
 public class DynamixelTTLConnection {
 	
-	public final static String SERIAL_PORT = "/dev/ttyUSB1";
+	public final static String SERIAL_PORT = "/dev/ttyUSB0";
 	
     public final static int[] BAUD_RATES = {9600, 19200, 38400, 57600, 115200, 200000, 250000, 400000, 500000, 1000000};
     public final static int DEFAULT_BAUD_RATE = 57600; // 34

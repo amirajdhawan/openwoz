@@ -12,7 +12,7 @@ public class UserConstants {
 	public static String PROFILE_CHANNEL = "vyo_robot";
 	
 	//IP address of the redis server
-	public static String REDIS_SERVER = "54.191.36.165";
+	public static String REDIS_SERVER = "54.187.236.59";
 	
 	//Port number of the redis server
 	public static int REDIS_PORT = 6379;
