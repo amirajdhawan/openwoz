@@ -1,14 +1,13 @@
 package openwoz.rpi.client;
 
-import openwoz.rpi.comm.RobotProfileSubscriber;
-import openwoz.rpi.helper.UserConstants;
-import openwoz.rpi.startup.MotorControllerConfig;
-import openwoz.rpi.startup.ReadDeviceMapping;
-import openwoz.rpi.startup.ReadRobotProfile;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import openwoz.rpi.comm.RobotProfileSubscriber;
+import openwoz.rpi.helper.UserConstants;
+import openwoz.rpi.startup.ReadDeviceMapping;
+import openwoz.rpi.startup.ReadRobotProfile;
+import openwoz.rpi.vyo.VyoStartup;
 import redis.clients.jedis.Jedis;
 
 /**
@@ -41,8 +40,9 @@ public class OpenWoz
 			ReadDeviceMapping.readDeviceConf();
 			
 			//Init the motor configuration
-			logger.info("Initialize Motor configuration");
-			MotorControllerConfig.initMotorConfig();
+			//logger.info("Initialize Motor configuration");
+			//MotorControllerConfig.initMotorConfig();
+			VyoStartup.setupVyoConfig();
 			
 			//Start a new thread to run a Jedis instance which listens on the topic robot_profile_name
 			logger.info("Jedis setup started");

@@ -6,7 +6,6 @@ import com.pi4j.io.gpio.GpioPinDigitalOutput;
 import com.pi4j.io.gpio.PinState;
 import com.pi4j.io.gpio.RaspiPin;
 
-import openwoz.devices.motor.dynamixel.DynamixelMotorType;
 import openwoz.devices.motor.dynamixel.conn.rpi.DynamixelPiMotorController;
 
 
@@ -15,9 +14,9 @@ public class MotorControllerConfig {
 	private static GpioPinDigitalOutput comLock;
 	public static DynamixelPiMotorController motorConfig;
 	
-	public static void initMotorConfig(){
+	public static void initMotorConfig(int motorType, String motorConfigLoc){
 		initSemaphore();
-		motorConfig = new DynamixelPiMotorController(comLock, DynamixelMotorType.MX_64, "resources/motors_config.xml");
+		motorConfig = new DynamixelPiMotorController(comLock, motorType, motorConfigLoc);
 		//contr.moveMotor("firstmotor", 1.6F);
 	}
 	private static GpioPinDigitalOutput initSemaphore() {

@@ -9,16 +9,18 @@ public class RobotEvent {
 	
 	//Name of the event
 	String name;
+	String className;
+	String methodName;
 	//Name of the device which is to be modified in this event
-	String deviceName;
+	//String deviceName;
 	//Value of the device to be communicated
-	double value;
+	//double value;
 	
 	public RobotEvent(){
 		
 	}
 	
-	public RobotEvent(String name, String device, double start){
+	/*public RobotEvent(String name, String device, double start){
 		this.name = name;
 		this.deviceName = device;
 		this.value = start;
@@ -30,21 +32,30 @@ public class RobotEvent {
 
 	public void setDeviceName(String deviceType) {
 		this.deviceName = deviceType;
-	}
-
+	}*/
+	
+	
 	public String getName() {
 		return name;
+	}
+
+	public String getClassName() {
+		return className;
+	}
+
+	public void setClassName(String className) {
+		this.className = className;
+	}
+
+	public String getMethodName() {
+		return methodName;
+	}
+
+	public void setMethodName(String methodName) {
+		this.methodName = methodName;
 	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public double getValue() {
-		return value;
-	}
-
-	public void setValue(double value) {
-		this.value = value;
-	}	
 }

@@ -1,12 +1,13 @@
 package openwoz.rpi.comm;
 
+import java.lang.reflect.Method;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import openwoz.rpi.dataobjects.RobotEvent;
-import openwoz.rpi.startup.MotorControllerConfig;
 import redis.clients.jedis.JedisPubSub;
 
 /**
@@ -97,13 +98,20 @@ public class RobotProfileSubscriber extends JedisPubSub {
 	 */
 	@Override
 	public void onMessage(String channel, String message) {
-		System.out.println(loggingPrefix + "Message received: " + message);
+		logger.info(loggingPrefix + "Message received: " + message);
 		
 		try{
 			ObjectMapper mapper = new ObjectMapper();
 			RobotEvent event = mapper.readValue(message, RobotEvent.class);
 			
-			MotorControllerConfig.motorConfig.moveMotor(event.getDeviceName(), (float)event.getValue());
+			Class<?> classInstance = Class.forName(event.getClassName());
+			Object objectReflect = classInstance.newInstance();
+			Method methodInstance = classInstance.getDeclaredMethod(event.getMethodName());
+			
+			logger.info(loggingPrefix + "Invoking method: " + event.getMethodName() + " from class: " + event.getClassName());
+			methodInstance.invoke(objectReflect);
+			
+			//MotorControllerConfig.motorConfig.moveMotor(event.getDeviceName(), (float)event.getValue());
 		}
 		catch(Exception ex){
 			ex.printStackTrace();
