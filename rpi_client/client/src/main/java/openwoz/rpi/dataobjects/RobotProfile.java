@@ -3,12 +3,24 @@ package openwoz.rpi.dataobjects;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Class which defines the data structure of a robot profile
+ * 
+ * @author Amiraj Dhawan (amirajdhawan@gmail.com)
+ */
 public class RobotProfile {
+	
+	//Name of the profile
 	String profileName;
+	//Purpose of the robot profile
 	String purpose;
+	//Platform supported by this robot profile
 	String platform;
 	
+	//Map of events that this robot profile defines
 	Map<String, RobotEvent> events;
+	
+	//Map of events that this robot profile defines
 	Map<String, RobotSequence> sequences;
 	
 	public RobotProfile(){

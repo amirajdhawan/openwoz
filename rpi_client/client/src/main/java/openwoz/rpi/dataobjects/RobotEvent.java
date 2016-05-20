@@ -1,8 +1,17 @@
 package openwoz.rpi.dataobjects;
 
+/**
+ * Class which defines the data structure of a robot event
+ * 
+ * @author Amiraj Dhawan (amirajdhawan@gmail.com)
+ */
 public class RobotEvent {
+	
+	//Name of the event
 	String name;
+	//Name of the device which is to be modified in this event
 	String deviceName;
+	//Value of the device to be communicated
 	double value;
 	
 	public RobotEvent(){
@@ -14,19 +23,6 @@ public class RobotEvent {
 		this.deviceName = device;
 		this.value = start;
 	}
-	
-	//public RobotEvent(String device, double end){
-		//this.eventName = event;
-	//	this.deviceName = device;
-	//}
-/*
-	public String getEventName() {
-		return eventName;
-	}
-
-	public void setEventName(String eventName) {
-		this.eventName = eventName;
-	}*/
 
 	public String getDeviceName() {
 		return deviceName;
@@ -50,6 +46,5 @@ public class RobotEvent {
 
 	public void setValue(double value) {
 		this.value = value;
-	}
-	
+	}	
 }
