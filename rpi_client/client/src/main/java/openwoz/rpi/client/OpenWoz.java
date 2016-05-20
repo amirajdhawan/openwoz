@@ -5,9 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import openwoz.rpi.comm.RobotProfileSubscriber;
 import openwoz.rpi.helper.UserConstants;
-import openwoz.rpi.startup.ReadDeviceMapping;
 import openwoz.rpi.startup.ReadRobotProfile;
-import openwoz.rpi.vyo.VyoStartup;
 import redis.clients.jedis.Jedis;
 
 /**
@@ -26,7 +24,7 @@ public class OpenWoz
 {
 	private static Logger logger = LoggerFactory.getLogger(OpenWoz.class);
 
-	public static void main(String[] args)
+	public void start()
 	{
 		Thread subsTh = null;
 		
@@ -34,15 +32,6 @@ public class OpenWoz
 			//Read Robot profiles from configuration file
 			logger.info("Read robot profiles");
 			ReadRobotProfile.readRobotProfile();
-			
-			//Read device configuration from configuration file
-			logger.info("Read device configuration");
-			ReadDeviceMapping.readDeviceConf();
-			
-			//Init the motor configuration
-			//logger.info("Initialize Motor configuration");
-			//MotorControllerConfig.initMotorConfig();
-			VyoStartup.setupVyoConfig();
 			
 			//Start a new thread to run a Jedis instance which listens on the topic robot_profile_name
 			logger.info("Jedis setup started");
@@ -83,7 +72,7 @@ public class OpenWoz
 			System.out.println("Joining now");
 			subsTh.join();
 		}
-		catch(InterruptedException ie){
+		catch(Exception ie){
 			//if the main thread is interrupted for any reason, it interrupts the jedis thread too to ensure
 			// that it closes the jedis server
 			if(subsTh != null)

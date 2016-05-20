@@ -111,7 +111,6 @@ public class RobotProfileSubscriber extends JedisPubSub {
 			logger.info(loggingPrefix + "Invoking method: " + event.getMethodName() + " from class: " + event.getClassName());
 			methodInstance.invoke(objectReflect);
 			
-			//MotorControllerConfig.motorConfig.moveMotor(event.getDeviceName(), (float)event.getValue());
 		}
 		catch(Exception ex){
 			ex.printStackTrace();

@@ -21,5 +21,5 @@ public class UserConstants {
 	public static String PROFILE_LOCATION = "resources/vyo_robot.js";
 	
 	//Location from where the device config file can be read from
-	public static String DEVICE_CONFIG_LOCATION = "resources/devices.js";
+	//public static String DEVICE_CONFIG_LOCATION = "resources/devices.js";
 }
