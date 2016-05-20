@@ -1,11 +1,12 @@
 package openwoz.rpi.client;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import openwoz.rpi.comm.RobotProfileSubscriber;
 import openwoz.rpi.helper.UserConstants;
 import openwoz.rpi.startup.ReadRobotProfile;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import redis.clients.jedis.Jedis;
 
 /**
@@ -36,8 +37,6 @@ public class OpenWoz
 			//Start a new thread to run a Jedis instance which listens on the topic robot_profile_name
 			logger.info("Jedis setup started");
 			subsTh = new Thread(new Runnable() {
-				 
-				@Override
 				public void run() {
 					Jedis jedServer = null;
 					try {
