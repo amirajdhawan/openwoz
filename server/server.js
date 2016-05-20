@@ -50,27 +50,28 @@ app.get('/', function(req, res){
 	res.render("index");
 });
 
-app.post('/robots/:profile_name/:event_name/trigger', function(req, res){
+app.get('/robots/:profile_name/:event_name', function(req, res){
 	//Actually send it to the redis channel
-	console.log(req.body);
+	//console.log(req.body);
 	var profile = req.params.profile_name;
 	var event = req.params.event_name;
-	console.log("Value: " + req.body.newVal);
-	var new_value = parseFloat(req.body.newVal);
+	//console.log("Value: " + req.body.newVal);
+	//var new_value = parseFloat(req.body.newVal);
 
 	var message = robo_profiles_ds.robot_profiles[profile].events[event];
-	message.value = new_value;
+	//message.value = new_value;
 	console.log("Sending redis channel: " + redisChannels[profile] + " message:" + JSON.stringify(message));
 	publisher.publish(redisChannels[profile], JSON.stringify(message));
 	
-	res.json({msg:"Event successfully triggered!"});
+	res.render("profile", {profile: robo_profiles_ds.robot_profiles[profile], msg: "Event successfully triggered!"});
+	//res.json({msg:"Event successfully triggered!"});
 	//res.render("event", {msg: "Message successfully passed!", profile: robo_profiles_ds.robot_profiles[profile], 
 	//	event_name: req.params.event_name});
 });
 
-app.get('/robots/:profile_name/:event_name', function(req, res){
+/*app.get('/robots/:profile_name/:event_name', function(req, res){
 	res.render("event", {profile: robo_profiles_ds.robot_profiles[req.params.profile_name], event_name: req.params.event_name});
-});
+});*/
 
 app.get('/robots/:profile_name', function(req, res){
 	res.render("profile", {profile: robo_profiles_ds.robot_profiles[req.params.profile_name]});

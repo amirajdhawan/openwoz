@@ -14,7 +14,7 @@ block content
     .col-md-4.text-justify(style="border-right:1px solid black")
       .row-fluid
         .col-md-12.text-center
-          img.img-responsive(src="../"+profile.image,width="200px",height="300px",style="display: block;margin: 0 auto;")
+          img.img-responsive(src="../../"+profile.image,width="200px",height="300px",style="display: block;margin: 0 auto;")
           br
           br
       p Description: #{profile.purpose}
@@ -25,6 +25,12 @@ block content
         .col-md-12
           h2 Events
           hr
+          if msg
+            .row-fluid
+              .col-md-12.text-center(style="height:35px;")
+                span.label.label-success(id="msg") #{msg}
+                br
+                br
           each event, ename in profile.events
             .row-fluid
               .col-md-12
@@ -34,7 +40,7 @@ block content
                   .col-md-4(style="vertical-align:center;text-align:right")
                     a.btn-sm.btn-primary(href=profile.profileKey+"/"+event.name,style="height:35px") Trigger!
                 hr
-                p Device Name: #{event.deviceName}
-                p Initial Value: #{event.value}
+                //p Device Name: #{event.deviceName}
+                //p Initial Value: #{event.value}
                 hr
                 br

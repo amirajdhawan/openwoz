@@ -5,15 +5,15 @@
 	"purpose" : "A social robot designed to manage your smart home.",
 	"platform" : "Raspberry Pi",
 	"events": {
-		"movemotor" : {	
-			"name" : "movemotor",
-			"deviceName" : "firstmotor",
-			"value" : 2.5
+		"headnod" : {	
+			"name" : "headnod",
+			"className": "openwoz.rpi.vyo.events.HeadNodEvent",
+			"methodName": "nodHead"
 		},
 		"anotherevent" : {
 			"name" : "anotherevent",
-			"deviceName" : "newdevice",
-			"value" : 0
+			"className" : "",
+			"methodName" : ""
 		}
 	},
 	"sequences" : {}
