@@ -49,6 +49,10 @@ Install Packages
 > tar xzf release.tar.gz <br/>
 > cd openwoz-reflection/server <br/>
 
+* Edit the file server.js and set the redis password which you set in the redis configuration file
+
+> redis_pass = "your_password"
+
 * Install npm dependencies.
 
 > npm install <br/>
