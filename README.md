@@ -15,7 +15,7 @@ Install Packages
 
 * Install nodejs and npm packages
 
-> sudo apt-get update
+> sudo apt-get update <br/>
 > sudo apt-get install nodejs npm
 
 * Create symlink for nodejs
@@ -24,17 +24,17 @@ Install Packages
 
 * Install Redis server
 
-> sudo apt-get install build-essential
-> sudo apt-get install tcl8.5
-> wget http://download.redis.io/releases/redis-stable.tar.gz
-> tar xzf redis-stable.tar.gz
-> cd redis-stable
-> make
-> //Can skip the next step but highly suggested to detect any issues
-> make test
-> sudo make install
-> sudo utils/install_server.sh
-> //Keep pressing enter to install redis with default config
+> sudo apt-get install build-essential <br/>
+> sudo apt-get install tcl8.5 <br/>
+> wget http://download.redis.io/releases/redis-stable.tar.gz <br/>
+> tar xzf redis-stable.tar.gz <br/>
+> cd redis-stable <br/>
+> make <br/>
+> //Can skip the next step but highly suggested to detect any issues <br/>
+> make test <br/>
+> sudo make install <br/>
+> sudo utils/install_server.sh <br/>
+> //Keep pressing enter to install redis with default config <br/>
 
 * Comment out the line "bind 127.0.0.1" in redis.conf file (typically /etc/redis/6379.conf)
 * In the same config file search for requirepass and uncomment it and change the password to an alphanumeric and complicated.
@@ -44,15 +44,15 @@ Install Packages
 
 * Download openwoz latest code using
 
-> cd ~
-> wget https://github.com/amirajdhawan/openwoz/archive/release.tar.gz
-> tar xzf release.tar.gz
-> cd openwoz-reflection/server
+> cd ~ <br/>
+> wget https://github.com/amirajdhawan/openwoz/archive/release.tar.gz <br/>
+> tar xzf release.tar.gz <br/>
+> cd openwoz-reflection/server <br/>
 
 * Install npm dependencies.
 
-> npm install
-> sudo npm install forever -g
+> npm install <br/>
+> sudo npm install forever -g <br/>
 
 > forever start server.js
 
@@ -65,16 +65,16 @@ In the folder server, start the server or to stop the server using the below
 
 > forever start|stop server.js
 
-The server is accessible in localhost:8080
+The server is accessible in ip_address:8080
 
 ## Available Links
 
-> GET localhost:8080/
+> GET ip_address:8080/
 
-> GET localhost:8080/robots
+> GET ip_address:8080/robots
 
-> GET localhost:8080/robots/{profile_name}
+> GET ip_address:8080/robots/{profile_name}
 
-> GET localhost:8080/robots/{profile_name}/{event_name}
+> GET ip_address:8080/robots/{profile_name}/{event_name}
 
-> GET localhost:8080/robots/{profile_name}/{event_name}/trigger
+> GET ip_address:8080/robots/{profile_name}/{event_name}/trigger
