@@ -13,10 +13,11 @@ Install Packages
 
 ## Installation for Ubuntu
 
-* Install nodejs and npm packages
+* Install nodejs and npm packages. Also install forever npm package globally
 
 > sudo apt-get update <br/>
-> sudo apt-get install nodejs npm
+> sudo apt-get install nodejs npm <br/>
+> sudo npm install forever -g
 
 * Create symlink for nodejs
 
@@ -56,7 +57,8 @@ Install Packages
 * Install npm dependencies.
 
 > npm install <br/>
-> sudo npm install forever -g <br/>
+
+* Start the server using forever
 
 > forever start server.js
 
