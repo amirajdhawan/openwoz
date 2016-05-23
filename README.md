@@ -73,6 +73,16 @@ In the folder server, start the server or to stop the server using the below
 
 The server is accessible in ip_address:8080
 
+### Make it available across server restarts
+
+> crontab -u {username} -e <br/>
+
+* At the end append the following line
+
+> @reboot /usr/local/bin/forever start /path/to/openwoz/folder/server/server.js
+
+* Restart and the server will automatically start across reboots
+
 ## Available Links
 
 > GET ip_address:8080/
