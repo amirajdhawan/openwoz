@@ -38,7 +38,7 @@ for(var i = 0; i < fileNames.length; i++){
 }
 
 publisher = redis.createClient();
-publisher.auth(redis_pass)
+publisher.auth(redis_pass);
 //publisher.publish(redisChannels["vyo_robot"], JSON.stringify(message));
 
 //Map all controllers to URL's

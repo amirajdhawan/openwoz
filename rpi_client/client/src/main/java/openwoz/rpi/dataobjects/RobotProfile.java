@@ -12,6 +12,8 @@ public class RobotProfile {
 	
 	//Name of the profile
 	String profileName;
+	//Name of the channel
+	String channelName;
 	//Purpose of the robot profile
 	String purpose;
 	//Platform supported by this robot profile
@@ -34,6 +36,14 @@ public class RobotProfile {
 
 	public void setSequences(Map<String, RobotSequence> sequences) {
 		this.sequences = sequences;
+	}
+	
+	public String getChannelName() {
+		return channelName;
+	}
+
+	public void setChannelName(String channelName) {
+		this.channelName = channelName;
 	}
 
 	public String getProfileName() {

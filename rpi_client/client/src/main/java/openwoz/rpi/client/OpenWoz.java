@@ -1,12 +1,10 @@
 package openwoz.rpi.client;
 
-import openwoz.rpi.comm.RobotProfileSubscriber;
-import openwoz.rpi.helper.UserConstants;
-import openwoz.rpi.startup.ReadRobotProfile;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import openwoz.rpi.comm.RobotProfileSubscriber;
+import openwoz.rpi.startup.ReadRobotProfile;
 import redis.clients.jedis.Jedis;
 
 /**
@@ -24,15 +22,14 @@ import redis.clients.jedis.Jedis;
 public class OpenWoz
 {
 	private static Logger logger = LoggerFactory.getLogger(OpenWoz.class);
-
-	public void start()
+	private Thread subsTh = null;
+	
+	public void start(String robotProfileFile, final String redisIPAddr, final int redisPortNo, final String redisPassword)
 	{
-		Thread subsTh = null;
-		
 		try{
 			//Read Robot profiles from configuration file
 			logger.info("Read robot profiles");
-			ReadRobotProfile.readRobotProfile();
+			ReadRobotProfile.readRobotProfile(robotProfileFile);
 			
 			//Start a new thread to run a Jedis instance which listens on the topic robot_profile_name
 			logger.info("Jedis setup started");
@@ -47,11 +44,12 @@ public class OpenWoz
 							final RobotProfileSubscriber subscriber = new RobotProfileSubscriber();
 							
 							//Create a new instance of Jedis on the REDIS_SERVER and REDIS_PORT
-							jedServer = new Jedis(UserConstants.REDIS_SERVER, UserConstants.REDIS_PORT);
+							jedServer = new Jedis(redisIPAddr, redisPortNo);
+							jedServer.auth(redisPassword);
 							
 							//Subscribe on the channel given by the robot_profile_name. This is a blocking 
 							// function call and never returns back
-							jedServer.subscribe(subscriber, UserConstants.PROFILE_CHANNEL);
+							jedServer.subscribe(subscriber, ReadRobotProfile.robotProfile.getChannelName());
 							logger.info("Subscription ended.");
 						}
 					}
@@ -77,5 +75,10 @@ public class OpenWoz
 			if(subsTh != null)
 				subsTh.interrupt();
 		}
+	}
+	
+	public void shutdown(){
+		if(subsTh != null)
+			subsTh.interrupt();
 	}
 }

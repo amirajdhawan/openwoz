@@ -5,7 +5,6 @@ import java.io.File;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import openwoz.rpi.dataobjects.RobotProfile;
-import openwoz.rpi.helper.UserConstants;
 
 /**
  * Reads the robot profile configuration file and stores as an object of class RobotProfile
@@ -23,10 +22,10 @@ public class ReadRobotProfile {
 	 * @return void
 	 * @author Amiraj Dhawan (amirajdhawan@gmail.com)
 	 */
-	public static void readRobotProfile(){
+	public static void readRobotProfile(String robotProfileFile){
 		try{
 			ObjectMapper mapper = new ObjectMapper();
-			robotProfile = mapper.readValue(new File(UserConstants.PROFILE_LOCATION), RobotProfile.class);
+			robotProfile = mapper.readValue(new File(robotProfileFile), RobotProfile.class);
 		}
 		catch(Exception ex){
 			ex.printStackTrace();

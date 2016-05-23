@@ -6,24 +6,25 @@ import vyo.devices.motor.helper.MotorControllerConfig;
 
 public class VyoStartup {
 	public static void main(String args[]){
+		OpenWoz openWozClient = null;
 		
-		Thread openWozThread  = null;
 		try{
-			
-			openWozThread = new Thread(new Runnable(){
-				@Override
-				public void run() {
-					OpenWoz openWozClient = new OpenWoz();
-					openWozClient.start();
-				}
-			});
-			openWozThread.start();
 			MotorControllerConfig.initMotorConfig(DynamixelMotorType.MX_64, VyoConstants.MOTOR_CONFIG_LOC);
-			openWozThread.join();
+			String redisIP = "54.200.150.195";
+			String redisPass = "";
+			int redisPort = 6379;
+			String profileLoc = "resources/vyo_robot.js";
+			
+			//OpenWoz start should be the last call in your main function 
+			openWozClient = new OpenWoz();
+			openWozClient.start(profileLoc, redisIP, redisPort, redisPass);
 		}
 		catch(Exception ex){
-			if(openWozThread != null)
-				openWozThread.interrupt();
+			
+		}
+		finally{
+			if(openWozClient != null)
+				openWozClient.shutdown();
 		}
 	}
 }
