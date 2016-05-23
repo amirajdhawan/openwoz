@@ -1,3 +1,5 @@
+var redis_pass = "";
+
 //Get Instance of ExpressJS
 var express = require('express');
 var app = express();
@@ -36,6 +38,7 @@ for(var i = 0; i < fileNames.length; i++){
 }
 
 publisher = redis.createClient();
+publisher.auth(redis_pass)
 //publisher.publish(redisChannels["vyo_robot"], JSON.stringify(message));
 
 //Map all controllers to URL's
