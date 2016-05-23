@@ -15,33 +15,66 @@ Install Packages
 
 * Install nodejs and npm packages
 
+> sudo apt-get update <br/>
 > sudo apt-get install nodejs npm
 
-* Install Redis server
-* Comment out the line "bind 127.0.0.1" and change protected yes to protected no in redis.conf file (/etc/redis/6379.conf)
 * Create symlink for nodejs
 
 > sudo ln -s "$(which nodejs)" /usr/bin/node
 
-* Install npm dependencies. Go to openwoz/server folder and execute
+* Install Redis server
 
-> npm install
+> sudo apt-get install build-essential <br/>
+> sudo apt-get install tcl8.5 <br/>
+> wget http://download.redis.io/releases/redis-stable.tar.gz <br/>
+> tar xzf redis-stable.tar.gz <br/>
+> cd redis-stable <br/>
+> make <br/>
+> //Can skip the next step but highly suggested to detect any issues <br/>
+> make test <br/>
+> sudo make install <br/>
+> sudo utils/install_server.sh <br/>
+> //Keep pressing enter to install redis with default config <br/>
+
+* Comment out the line "bind 127.0.0.1" in redis.conf file (typically /etc/redis/6379.conf)
+* In the same config file search for requirepass and uncomment it and change the password to an alphanumeric and complicated.
+* Start the server
+
+> sudo service redis_6379 restart
+
+* Download openwoz latest code using
+
+> cd ~ <br/>
+> wget https://github.com/amirajdhawan/openwoz/archive/release.tar.gz <br/>
+> tar xzf release.tar.gz <br/>
+> cd openwoz-reflection/server <br/>
+
+* Install npm dependencies.
+
+> npm install <br/>
+> sudo npm install forever -g <br/>
+
+> forever start server.js
 
 ## Usage
-In the folder openwoz/server execute
+In the folder server, to restart the server use the below
 
-> npm start
+> forever restart server.js
 
-The server is accessible in localhost:8080
+In the folder server, start the server or to stop the server using the below
+
+> forever start|stop server.js
+
+The server is accessible in ip_address:8080
 
 ## Available Links
 
-> GET localhost:8080/
+> GET ip_address:8080/
 
-> GET localhost:8080/robots
+> GET ip_address:8080/robots
 
-> GET localhost:8080/robots/{profile_name}
+> GET ip_address:8080/robots/{profile_name}
 
-> GET localhost:8080/robots/{profile_name}/{event_name}
+> GET ip_address:8080/robots/{profile_name}/{event_name}
 
-> GET localhost:8080/robots/{profile_name}/{event_name}/trigger
+> GET ip_address:8080/robots/{profile_name}/{event_name}/trigger
