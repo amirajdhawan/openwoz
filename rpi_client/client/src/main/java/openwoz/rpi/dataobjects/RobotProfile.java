@@ -14,6 +14,8 @@ public class RobotProfile {
 	String profileName;
 	//Name of the channel
 	String channelName;
+	String profileKey;
+	String image;
 	//Purpose of the robot profile
 	String purpose;
 	//Platform supported by this robot profile
@@ -30,6 +32,22 @@ public class RobotProfile {
 		sequences = new HashMap<String, RobotSequence>();
 	}
 	
+	public String getProfileKey() {
+		return profileKey;
+	}
+
+	public void setProfileKey(String profileKey) {
+		this.profileKey = profileKey;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
 	public Map<String, RobotSequence> getSequences() {
 		return sequences;
 	}
