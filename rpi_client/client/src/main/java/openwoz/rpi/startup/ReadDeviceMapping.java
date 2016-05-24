@@ -1,21 +1,12 @@
-/*package openwoz.rpi.startup;
+package openwoz.rpi.startup;
 
-import java.io.File;
-import java.util.HashMap;
-
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import openwoz.rpi.dataobjects.Device;
-import openwoz.rpi.helper.UserConstants;
-
-*//**
+/*
  * Reads the device configuration file and stores it in a hashmap for easy access for other functions.
  * 
  * @author Amiraj Dhawan (amirajdhawan@gmail.com)
- *//*
+ */
 public class ReadDeviceMapping {
-	public static HashMap<String, Device> deviceMapping;
+	/*public static HashMap<String, Device> deviceMapping;
 	
 	*//**
 	 * Reads the device configuration file from the location pointed to by DEVICE_CONFIG_LOCATION,
@@ -34,6 +25,5 @@ public class ReadDeviceMapping {
 		catch(Exception ex){
 			ex.printStackTrace();
 		}
-	}
+	}*/
 }
-*/
