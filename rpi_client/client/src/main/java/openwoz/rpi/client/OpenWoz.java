@@ -1,5 +1,7 @@
 package openwoz.rpi.client;
 
+import java.io.File;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,7 +26,7 @@ public class OpenWoz
 	private static Logger logger = LoggerFactory.getLogger(OpenWoz.class);
 	private Thread subsTh = null;
 	
-	public void start(String robotProfileFile, final String redisIPAddr, final int redisPortNo, final String redisPassword)
+	public void start(File robotProfileFile, final String redisIPAddr, final int redisPortNo, final String redisPassword)
 	{
 		try{
 			//Read Robot profiles from configuration file

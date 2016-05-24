@@ -1,5 +1,7 @@
 package vyo.startup;
 
+import java.io.File;
+
 import openwoz.rpi.client.OpenWoz;
 import vyo.devices.motor.dynamixel.DynamixelMotorType;
 import vyo.devices.motor.helper.MotorControllerConfig;
@@ -13,11 +15,11 @@ public class VyoStartup {
 			String redisIP = "54.200.150.195";
 			String redisPass = "";
 			int redisPort = 6379;
-			String profileLoc = "resources/vyo_robot.js";
+			File profileFile = new File("resources/vyo_robot.js");
 			
 			//OpenWoz start should be the last call in your main function 
 			openWozClient = new OpenWoz();
-			openWozClient.start(profileLoc, redisIP, redisPort, redisPass);
+			openWozClient.start(profileFile, redisIP, redisPort, redisPass);
 		}
 		catch(Exception ex){
 			

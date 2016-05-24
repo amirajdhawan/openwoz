@@ -22,10 +22,10 @@ public class ReadRobotProfile {
 	 * @return void
 	 * @author Amiraj Dhawan (amirajdhawan@gmail.com)
 	 */
-	public static void readRobotProfile(String robotProfileFile){
+	public static void readRobotProfile(File robotProfileFile){
 		try{
 			ObjectMapper mapper = new ObjectMapper();
-			robotProfile = mapper.readValue(new File(robotProfileFile), RobotProfile.class);
+			robotProfile = mapper.readValue(robotProfileFile, RobotProfile.class);
 		}
 		catch(Exception ex){
 			ex.printStackTrace();
