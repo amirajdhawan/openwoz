@@ -16,7 +16,7 @@ public class VyoStartup {
 			PinConfig.config();
 			
 			String redisIP = "54.200.150.195";
-			String redisPass = "aghi487hkj23987hjk";
+			String redisPass = "";
 			int redisPort = 6379;
 			File profileFile = new File("resources/vyo_robot.js");
 			
