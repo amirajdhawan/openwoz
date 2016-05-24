@@ -40,6 +40,9 @@ Install Packages
 
 * Comment out the line "bind 127.0.0.1" in redis.conf file (typically /etc/redis/6379.conf)
 * In the same config file search for requirepass and uncomment it and change the password to an alphanumeric and complicated.
+
+> requirepass "your_redis_password"
+
 * Start the server
 
 > sudo service redis_6379 restart
