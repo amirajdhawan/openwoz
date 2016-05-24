@@ -1,19 +1,13 @@
 package vyo.events;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import openwoz.rpi.comm.RobotProfileSubscriber;
 import vyo.devices.motor.helper.MotorControllerConfig;
 
 public class HeadNodEvent {
 	
-	private static Logger logger = LoggerFactory.getLogger(RobotProfileSubscriber.class);
 	private static String loggingPrefix = "";
 	
 	public void nodHead(){
 		
-		logger.info(loggingPrefix + "Got call for nodHead method!");
 		try{
 			int i = 0;
 			while(i < 5){
