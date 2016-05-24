@@ -12,8 +12,11 @@ public class VyoStartup {
 		
 		try{
 			MotorControllerConfig.initMotorConfig(DynamixelMotorType.MX_64, VyoConstants.MOTOR_CONFIG_LOC);
+			
+			PinConfig.config();
+			
 			String redisIP = "54.200.150.195";
-			String redisPass = "";
+			String redisPass = "aghi487hkj23987hjk";
 			int redisPort = 6379;
 			File profileFile = new File("resources/vyo_robot.js");
 			
