@@ -34,11 +34,15 @@ Install Packages
 > //Can skip the next step but highly suggested to detect any issues <br/>
 > make test <br/>
 > sudo make install <br/>
+> <br/>
+> //Keep pressing enter for the below command to install redis with default config <br/>
 > sudo utils/install_server.sh <br/>
-> //Keep pressing enter to install redis with default config <br/>
 
 * Comment out the line "bind 127.0.0.1" in redis.conf file (typically /etc/redis/6379.conf)
 * In the same config file search for requirepass and uncomment it and change the password to an alphanumeric and complicated.
+
+> requirepass "your_redis_password"
+
 * Start the server
 
 > sudo service redis_6379 restart
@@ -50,28 +54,17 @@ Install Packages
 > tar xzf release.tar.gz <br/>
 > cd openwoz-release/server <br/>
 
-* Edit the file server.js and set the redis password which you set in the redis configuration file
+* Edit the file server.js and set the redis password in the first line which you set in the redis configuration file
 
-> redis_pass = "your_password"
+> var redis_pass = "redis_password_that_you_set_above"
 
 * Install npm dependencies.
 
-> npm install <br/>
+> sudo npm install <br/>
 
 * Start the server using forever
 
 > forever start server.js
-
-## Usage
-In the folder server, to restart the server use the below
-
-> forever restart server.js
-
-In the folder server, start the server or to stop the server using the below
-
-> forever start|stop server.js
-
-The server is accessible in ip_address:8080
 
 ### Make it available across server restarts
 
@@ -83,14 +76,25 @@ The server is accessible in ip_address:8080
 
 * Restart and the server will automatically start across reboots
 
+The server is accessible in ip_address
+
+## Usage
+In the folder server, to restart the server use the below
+
+> forever restart server.js
+
+In the folder server, start the server or to stop the server using the below
+
+> forever start|stop server.js
+
 ## Available Links
 
-> GET ip_address:8080/
+> GET ip_address/
 
-> GET ip_address:8080/robots
+> GET ip_address/robots
 
-> GET ip_address:8080/robots/{profile_name}
+> GET ip_address/robots/{profile_name}
 
-> GET ip_address:8080/robots/{profile_name}/{event_name}
+> GET ip_address/robots/{profile_name}/{event_name}
 
-> GET ip_address:8080/robots/{profile_name}/{event_name}/trigger
+> GET ip_address/robots/{profile_name}/{event_name}/trigger
